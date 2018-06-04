@@ -114,14 +114,14 @@ class assessmentextensions extends \core\task\scheduled_task {
         // Create reference array of students - if has a linked assessement AND an extension date/time.
         $student = array();
         foreach ($extensions as $e) {
-            $key = $e[student_code].$e[assessment_idcode];
-            if ($e[assessment_idcode] && ($e[student_ext_duedate] || $e[student_ext_duetime])) {
-                $student[$key]['stucode'] = $e[student_code];
-                $student[$key]['lc'] = $e[assessment_idcode];
-                $student[$key]['extdate'] = $e[student_ext_duedate];
-                $student[$key]['exttime'] = $e[student_ext_duetime];
-                $student[$key]['fbdate'] = $e[student_fbdue_date];
-                $student[$key]['fbtime'] = $e[student_fbdue_time];
+            $key = $e['student_code'].$e['assessment_idcode'];
+            if ($e['assessment_idcode'] && ($e['student_ext_duedate'] || $e['student_ext_duetime'])) {
+                $student[$key]['stucode'] = $e['student_code'];
+                $student[$key]['lc'] = $e['assessment_idcode'];
+                $student[$key]['extdate'] = $e['student_ext_duedate'];
+                $student[$key]['exttime'] = $e['student_ext_duetime'];
+                $student[$key]['fbdate'] = $e['student_fbdue_date'];
+                $student[$key]['fbtime'] = $e['student_fbdue_time'];
             }
         }
 
